@@ -1,0 +1,31 @@
+{% extends 'base/base.html'%}
+
+{% block title%}
+Mascotas
+{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+<form  method="post">
+{% csrf_token %}
+ <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Nombre de usuario</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" name="username" >
+    </div>
+  </div>
+ <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" name="password" placeholder="Password">
+    </div>
+  </div>
+<div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Confirmar Password</label>
+    <div class="col-sm-10">
+      <a href="{% url 'password_reset'%}">Olvide mi contraseña</a>
+      <input type="submit" class="btn btn-primary" value="ingresar">
+    </div>
+  </div>
+</form>
+{% endblock %}
